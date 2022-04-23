@@ -6,18 +6,18 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import CreatorSignUp from "./pages/CreatorSignUp";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div className="App max-w-7xl mx-auto">
-      <Navbar />
+    <div className="App">
       <Routes>
         <Route path={`/`} element={<Home />} />
         <Route path={`/sign-in`} element={<SignIn />} />
         <Route path={`/sign-up`} element={<SignUp />} />
         <Route path={`/creator-sign-up`} element={<CreatorSignUp />} />
+        <Route path={`/dashboard`} element={<Dashboard />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

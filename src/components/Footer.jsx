@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="p-4 bg-purple-600 shadow md:px-6 md:py-8 rounded-t-3xl">
+    <footer className="p-4 bg-purple-600/75 shadow md:px-6 md:py-8 rounded-t-3xl">
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="flex items-center mb-4 sm:mb-0">
           <svg

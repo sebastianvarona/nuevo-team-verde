@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import background from "../images/background2.jpg";
 import { Link } from "react-router-dom";
+import LandingLayout from "../components/LandingLayout";
 
 export default function SignIn() {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ export default function SignIn() {
     e.preventDefault();
   };
   return (
-    <>
+    <LandingLayout>
       <div className={`h-screen pt-20 px-12 relative mb-20`}>
         <div
           className={`w-full h-full rounded-2xl bg-top bg-cover overflow-hidden`}
@@ -104,6 +105,6 @@ export default function SignIn() {
           </div>
         </div>
       </div>
-    </>
+    </LandingLayout>
   );
 }

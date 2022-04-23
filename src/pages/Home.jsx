@@ -1,6 +1,7 @@
 import React from "react";
 import background from "../images/background3.jpg";
 import tournamentsBackground from "../images/background.jpg";
+import LandingLayout from "../components/LandingLayout";
 
 export default function Home() {
   const styles = {
@@ -13,7 +14,7 @@ export default function Home() {
     },
   };
   return (
-    <>
+    <LandingLayout>
       {/* HEADER */}
       <div className={`h-screen pt-20 px-12 relative mb-20`}>
         <div
@@ -154,7 +155,7 @@ export default function Home() {
           </h3>
         </div>
       </div>
-    </>
+    </LandingLayout>
   );
 }
 
