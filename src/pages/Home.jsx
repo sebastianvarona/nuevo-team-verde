@@ -1,22 +1,23 @@
-import React from "react";
-import background from "../images/background3.jpg";
-import tournamentsBackground from "../images/background.jpg";
-import LandingLayout from "../components/LandingLayout";
+import React from 'react';
+import background from '../images/qatarbg1.jpg';
+import tournamentsBackground from '../images/qatarbg2.jpg';
+import LandingLayout from '../components/LandingLayout';
 
 export default function Home() {
   const styles = {
     header: {
       backgroundImage: `url(${background})`,
+      backgroundPosition: 'center',
     },
     tournaments: {
       backgroundImage: `url(${tournamentsBackground})`,
-      backgroundPosition: "center",
+      backgroundPosition: 'top',
     },
   };
   return (
     <LandingLayout>
       {/* HEADER */}
-      <div className={`h-screen pt-20 px-12 relative mb-20`}>
+      <div className={`h-screen pt-20 px-12 pb-12 relative mb-20`}>
         <div
           className={`w-full h-full rounded-2xl bg-top bg-cover overflow-hidden`}
           style={styles.header}
@@ -28,7 +29,7 @@ export default function Home() {
               Take control of your
             </h2>
             <h1 className={`text-8xl font-black italic text-shadow-lg`}>
-              Interactions
+              Predictions
             </h1>
           </div>
         </div>
@@ -36,7 +37,9 @@ export default function Home() {
 
       {/* What is connect n play */}
       <div className={`mb-20`}>
-        <h3 className={`font-black text-4xl mb-6`}>What is Connect N Play</h3>
+        <h3 className={`font-black text-4xl mb-6`}>
+          What is Qatar 2022 Predictions
+        </h3>
         <p className={`text-white/75 text-xl max-w-2xl mx-auto`}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id corrupti
           quod officia iste aliquam veniam. Temporibus omnis consectetur aliquid
@@ -48,7 +51,7 @@ export default function Home() {
       {/* FEATURES */}
       <div className={`mb-20 grid grid-cols-3 gap-6 mx-10`}>
         <FeatureComponent
-          title="Verified Creators"
+          title="Verified Matches"
           icon={
             <svg
               className="w-16 h-16"
@@ -67,7 +70,7 @@ export default function Home() {
           }
         />
         <FeatureComponent
-          title="Improved Interactions"
+          title="Users Ranking"
           icon={
             <svg
               className="w-16 h-16"
@@ -92,7 +95,7 @@ export default function Home() {
           }
         />
         <FeatureComponent
-          title="Made by People for People"
+          title="Follow the matches you want"
           icon={
             <svg
               className="w-16 h-16"
@@ -122,21 +125,22 @@ export default function Home() {
             className={`w-full h-full grid grid-cols-2 gap-6 justify-center bg-purple-700/50 px-12 py-32`}
           >
             <h3 className={`text-6xl font-extrabold text-purple-100 text-left`}>
-              Participate in
+              Keep an eye in your
               <br />
-              tournaments
+              matches
             </h3>
             <p
               className={`h-full flex items-center text-purple-100 text-left text-xl`}
             >
-              Organize and follow your tournaments an easy and interactive
-              interface that lets you choose the users that are participating.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Distinctio fuga rem vero possimus dolorum dolor dolores, culpa sed
+              quaerat.
             </p>
           </div>
         </div>
       </div>
 
-      {/* GIVEAWAYS */}
+      {/* Ranking */}
       <div className={`pt-20 px-12 relative mb-20`}>
         <div
           className={`w-full h-full grid grid-cols-2 gap-6 justify-center px-12 pb-12`}
@@ -144,14 +148,14 @@ export default function Home() {
           <p
             className={`h-full flex items-center text-purple-100 text-right text-xl`}
           >
-            Use the giveaways function to randomly pick someone from your
-            community. Participate and track other's communities giveaways and
-            win lots of prizes.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            officia ut illum aperiam, ipsum quam ipsam saepe at magnam natus
+            esse eligendi inventore quod ab nostrum rem adipisci minus sint.
           </p>
           <h3 className={`text-6xl font-extrabold text-purple-100 text-right`}>
             Participate in
             <br />
-            giveaways
+            the ranking
           </h3>
         </div>
       </div>

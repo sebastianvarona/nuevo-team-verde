@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import background from "../images/background4.jpg";
-import { Link } from "react-router-dom";
-import LandingLayout from "../components/LandingLayout";
+import React, { useState } from 'react';
+import background from '../images/qatarbg4.jpg';
+import { Link } from 'react-router-dom';
+import LandingLayout from '../components/LandingLayout';
 
 export default function SignUp() {
-  const [fn, setFN] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [fn, setFN] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const styles = {
     background: {
       backgroundImage: `url(${background})`,
@@ -22,7 +22,7 @@ export default function SignUp() {
   };
   return (
     <LandingLayout>
-      <div className={`min-h-screen pt-20 px-12 relative mb-20`}>
+      <div className={`h-screen pt-20 px-12 relative mb-20`}>
         <div
           className={`w-full h-full rounded-2xl bg-top bg-cover overflow-hidden`}
           style={styles.background}
@@ -108,14 +108,14 @@ export default function SignUp() {
               {/* SPANS */}
               <div className={`flex flex-col items-center mt-8`}>
                 <span className={`block mb-2`}>
-                  Already have an account?{" "}
-                  <Link to={"/sign-in"}>
-                    {" "}
+                  Already have an account?{' '}
+                  <Link to={'/sign-in'}>
+                    {' '}
                     <span
                       className={`underline underline-offset-4 text-white/50 ml-4 hover:text-white transition`}
                     >
                       Login here
-                    </span>{" "}
+                    </span>{' '}
                   </Link>
                 </span>
                 {/* <span className={`block mb-2`}>

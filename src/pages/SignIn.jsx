@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import background from "../images/background2.jpg";
-import { Link } from "react-router-dom";
-import LandingLayout from "../components/LandingLayout";
+import React, { useState } from 'react';
+import background from '../images/qatarbg3.jpg';
+import { Link } from 'react-router-dom';
+import LandingLayout from '../components/LandingLayout';
 
 export default function SignIn() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const styles = {
     background: {
       backgroundImage: `url(${background})`,
@@ -72,14 +72,14 @@ export default function SignIn() {
               {/* SPANS */}
               <div className={`flex flex-col items-start mt-8`}>
                 <span className={`block mb-2`}>
-                  Don't have an account yet?{" "}
-                  <Link to={"/sign-up"}>
-                    {" "}
+                  Don't have an account yet?{' '}
+                  <Link to={'/sign-up'}>
+                    {' '}
                     <span
                       className={`underline underline-offset-4 text-white/50 ml-4 hover:text-white transition`}
                     >
                       Register here
-                    </span>{" "}
+                    </span>{' '}
                   </Link>
                 </span>
                 {/* <span className={`block`}>

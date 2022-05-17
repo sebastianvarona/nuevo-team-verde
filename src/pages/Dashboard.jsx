@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import background from "../images/background2.jpg";
+import React, { useState } from 'react';
+import Footer from '../components/Footer';
+import background from '../images/background2.jpg';
 
 export default function Dashboard() {
   const [showUserD, setShowUserD] = useState(false);
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState('');
 
   const styles = {
     header: {
       backgroundImage: `url('${background}')`,
-      backgroundPosition: "center",
-      backgroundSize: "cover",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
     },
   };
 
@@ -22,7 +23,7 @@ export default function Dashboard() {
             setShowUserD(false);
           }}
           className={`absolute top-0 left-0 z-20 h-screen w-screen ${
-            showUserD ? "" : "hidden"
+            showUserD ? '' : 'hidden'
           }`}
         ></div>
         <div className="relative z-30">
@@ -50,14 +51,11 @@ export default function Dashboard() {
 
           <div
             className={`absolute top-10 right-0 overflow-hidden bg-purple-700/50 backdrop-blur-sm shadow-sm rounded-lg ${
-              showUserD ? "" : "hidden"
+              showUserD ? '' : 'hidden'
             }`}
           >
             <button className="block hover:bg-purple-700 py-2 px-4">
-              Tournaments
-            </button>
-            <button className="block hover:bg-purple-700 w-full py-2 px-4">
-              Giveaways
+              logout
             </button>
           </div>
         </div>
@@ -71,10 +69,10 @@ export default function Dashboard() {
         onClick={() => {
           setActiveTab(props.text);
         }}
-        className={`rounded-lg px-4 py-1 capitalize hover:bg-purple-500/50 transition ${
+        className={`rounded-lg px-4 py-1 capitalize font-semibold hover:bg-purple-500/50 transition ${
           activeTab === props.text
-            ? "bg-purple-700/50 backdrop-blur-md shadow-md"
-            : ""
+            ? 'bg-purple-700/50 backdrop-blur-md shadow-md'
+            : ''
         }`}
       >
         {props.text}
@@ -83,41 +81,21 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="mx-auto min-h-screen flex flex-col justify-between">
       {/* Header */}
       <div
-        className={`mx-12 h-[70vh] rounded-b-3xl overflow-hidden relative`}
+        className={`mx-12 h-[40vh] rounded-b-3xl overflow-hidden relative`}
         style={styles.header}
       >
         <div
           className={`bg-purple-700/50 absolute top-0 left-0 w-full h-full`}
         ></div>
-        <nav className="h-20 flex items-center px-12 relative z-10">
+        <nav className="h-20 flex items-center px-12 relative z-20">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             {/* Brand */}
             <span className="flex items-center">
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="self-center text-xl font-black whitespace-nowrap ml-3">
-                Connect N Play
+              <span className="self-center text-xl font-black whitespace-nowrap">
+                Qatar 2022 Predictions
               </span>
             </span>
             <ul className={`flex gap-4 items-center`}>
@@ -131,28 +109,146 @@ export default function Dashboard() {
             <div className={``}>
               <h1 className={`text-5xl font-black`}>Welcome User</h1>
               <p className={`text-white/50  text-xl text-left`}>@user</p>
-              <div className={`flex justify-start`}>
-                <span
-                  className={`text-white/75 text-lg text-left font-semibold`}
-                >
-                  Following: 143
-                </span>
-                <span
-                  className={`ml-4 text-white/75 text-lg text-left font-semibold`}
-                >
-                  Followers: 15,000
-                </span>
-              </div>
             </div>
           </div>
           <div className={`mx-12 flex justify-end gap-6 items-center`}>
-            <TabButton text={`followers`} />
-            <TabButton text={`following`} />
-            <TabButton text={`tournaments`} />
-            <TabButton text={`giveaways`} />
+            <TabButton text={`ranking`} />
+            <TabButton text={`matches`} />
+            <TabButton text={`history`} />
           </div>
         </div>
       </div>
+      <div className={`max-w-7xl mx-auto flex flex-col items-center`}>
+        <h1 className={`capitalize text-5xl my-8 font-bold`}>{activeTab}</h1>
+        {/* Ranking */}
+        <div
+          className={`border rounded-2xl py-8 ${
+            activeTab === 'ranking' ? '' : 'hidden'
+          }`}
+        >
+          <table class="table-auto text-left">
+            <thead>
+              <tr>
+                <th className={`px-8 py-2 text-xl`}>#</th>
+                <th className={`px-8 py-2 text-xl`}>Name</th>
+                <th className={`px-8 py-2 text-xl`}>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className={`px-8 py-2`}>1</td>
+                <td className={`px-8 py-2`}>Malcolm Lockyer</td>
+                <td className={`px-8 py-2`}>1961</td>
+              </tr>
+              <tr>
+                <td className={`px-8 py-2`}>2</td>
+                <td className={`px-8 py-2`}>The Eagles</td>
+                <td className={`px-8 py-2`}>1972</td>
+              </tr>
+              <tr>
+                <td className={`px-8 py-2`}>3</td>
+                <td className={`px-8 py-2`}>Earth, Wind, and Fire</td>
+                <td className={`px-8 py-2`}>1975</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {/* Matches */}
+        <div
+          className={`grid grid-cols-3 grid-flow-row gap-6 w-full ${
+            activeTab === 'matches' ? '' : 'hidden'
+          }`}
+        >
+          <div
+            className={`border rounded-2xl flex flex-col w-full gap-4 items-center p-8`}
+          >
+            <h3 className={`font-semibold text-3xl`}>Group B</h3>
+            <div className={`flex gap-4`}>
+              <label className="capitalize text-xl">argentina</label>
+              <input
+                type="text"
+                className="bg-neutral-800 rounded-xl h-8 w-12 text-center"
+              />
+              <span className="font-bold flex items-center">VS</span>
+              <input
+                type="text"
+                className="bg-neutral-800 rounded-xl h-8 w-12 text-center"
+              />
+              <label className="capitalize text-xl">poland</label>
+            </div>
+            <div className={`flex flex-col gap-4`}>
+              <button className="bg-green-500 rounded-2xl px-4 py-2 capitalize">
+                apply prediction
+              </button>
+              <span>11-12-2022 16:30</span>
+            </div>
+          </div>
+        </div>
+        {/* History */}
+        <div
+          className={`grid grid-cols-2 grid-flow-row gap-8 w-full ${
+            activeTab === 'history' ? '' : 'hidden'
+          }`}
+        >
+          <div>
+            <h4 className="text-4xl font-bold mb-8">Pending Matches</h4>
+            <div className="grid grid-cols-1 grid-flow-row gap-4">
+              <div
+                className={`border rounded-2xl flex flex-col w-full gap-2 items-center p-4`}
+              >
+                <h3 className={`font-bold text-3xl`}>Group B</h3>
+                <div className={`flex gap-4`}>
+                  <label className="capitalize text-xl">argentina</label>
+                  <span className="text-xl">
+                    ( <span className="font-bold text-xl">2</span> )
+                  </span>
+                  <span className="font-bold flex items-center">VS</span>
+                  <span className="text-xl">
+                    ( <span className="font-bold text-xl">3</span> )
+                  </span>
+                  <label className="capitalize text-xl">Poland</label>
+                </div>
+                <div className={`flex flex-col gap-4`}>
+                  <button className="bg-orange-500 rounded-2xl px-4 py-2 capitalize">
+                    edit prediction
+                  </button>
+                  <span>11-12-2022 16:30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-4xl font-bold mb-8">Completed Matches</h4>
+            <div className="grid grid-cols-1 grid-flow-row gap-4">
+              <div
+                className={`border rounded-2xl flex flex-col w-full gap-2 items-center p-4`}
+              >
+                <h3 className={`font-bold text-3xl`}>Group H</h3>
+                <div className={`flex gap-4`}>
+                  <label className="capitalize text-xl">germany</label>
+                  <span className="text-xl">
+                    ({' '}
+                    <span className="font-bold text-xl text-green-500">4</span>{' '}
+                    )
+                  </span>
+                  <span className="font-bold flex items-center">VS</span>
+                  <span className="text-xl">
+                    ( <span className="font-bold text-xl text-red-500">1</span>{' '}
+                    )
+                  </span>
+                  <label className="capitalize text-xl">poland</label>
+                </div>
+                <div className={`flex flex-col gap-4`}>
+                  <span>11-12-2022 16:30</span>
+                  <span className="text-2xl font-black">Score 2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-20"></div>
+      <Footer />
     </div>
   );
 }
